@@ -1,0 +1,259 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #0f2b46;
+  --primary-deep: #071d31;
+  --accent: #d9ac5c;
+  --accent-soft: #f7e7c2;
+  --light: #f5f2eb;
+  --text: #243647;
+  --border: #dfe3e8;
+  --white: #ffffff;
+}
+
+/* Typography */
+@layer base {
+  html[dir="rtl"] {
+    text-align: right;
+  }
+
+  html[dir="ltr"] {
+    text-align: left;
+  }
+
+  body {
+    @apply bg-light text-text;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-6 leading-tight;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl font-serif font-bold text-primary mb-4 leading-tight;
+  }
+
+  h3 {
+    @apply text-2xl font-bold text-primary mb-3;
+  }
+
+  h4 {
+    @apply text-xl font-bold text-primary mb-2;
+  }
+
+  p {
+    @apply text-base text-text leading-relaxed;
+  }
+
+  a {
+    @apply text-primary hover:text-accent transition-colors;
+  }
+}
+
+/* Components */
+@layer components {
+  .container {
+    @apply max-w-6xl mx-auto px-6;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-primary text-white rounded font-bold hover:bg-blue-900 transition-colors;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-transparent border-2 border-primary text-primary rounded font-bold hover:bg-light transition-colors;
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center justify-center px-7 py-4 bg-accent text-primary rounded font-bold hover:bg-yellow-500 transition-colors shadow-sm;
+  }
+
+  .section-spacing {
+    @apply py-16 md:py-24;
+  }
+
+  .hero-section {
+    @apply min-h-screen flex items-center justify-center bg-light;
+  }
+
+  .card {
+    @apply bg-white border border-border rounded-[20px] p-6 shadow-sm hover:shadow-md transition-all;
+  }
+
+  .feature-card {
+    @apply bg-white border border-border rounded-[22px] p-8 shadow-sm text-center;
+  }
+
+  .feature-icon {
+    @apply mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-accent-soft text-xl text-primary mx-auto;
+  }
+
+  .section-tag {
+    @apply mb-4 inline-block rounded-full border border-primary/15 bg-primary/5 px-4 py-2 text-xs font-bold uppercase tracking-[0.12em] text-primary;
+  }
+
+  .light-tag {
+    @apply border-white/20 bg-white/10 text-white;
+  }
+
+  .image-panel {
+    @apply relative min-h-[420px] overflow-hidden rounded-[28px] shadow-lg;
+  }
+
+  .feature-panel {
+    @apply flex h-full flex-col justify-between min-h-[220px] bg-light border-0;
+  }
+
+  .building-section {
+    @apply overflow-hidden;
+  }
+
+  .building-inner {
+    @apply grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr];
+  }
+
+  .building-preview {
+    @apply relative min-h-[420px] overflow-hidden rounded-[28px] shadow-lg border border-white/10;
+  }
+
+  .story-card {
+    @apply block overflow-hidden rounded-[22px] bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg border border-border;
+  }
+
+  .story-image-wrap {
+    @apply relative h-64 overflow-hidden;
+  }
+
+  .story-content {
+    @apply p-6;
+  }
+
+  .testimonial-card {
+    @apply flex h-full flex-col justify-between bg-light border-0;
+  }
+
+  .testimonial-quote {
+    @apply text-lg italic text-text leading-relaxed mb-6;
+  }
+
+  .testimonial-author {
+    @apply mt-auto flex flex-col gap-1 border-t border-border pt-4;
+  }
+
+  .page-hero {
+    @apply relative overflow-hidden bg-primary py-20 text-white;
+  }
+
+  .page-hero::before {
+    content: "";
+    @apply absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(217,172,92,0.25),_transparent_55%)];
+  }
+
+  .page-hero-inner {
+    @apply relative z-10 container max-w-4xl text-center;
+  }
+
+  .stat-grid {
+    @apply grid gap-6 md:grid-cols-3;
+  }
+
+  .stat-card {
+    @apply rounded-[22px] bg-white p-8 text-center shadow-sm border border-border;
+  }
+
+  .stat-number {
+    @apply block text-4xl md:text-5xl font-serif font-bold text-primary;
+  }
+
+  .split-grid {
+    @apply grid gap-10 lg:grid-cols-2 items-center;
+  }
+
+  .info-list {
+    @apply space-y-4;
+  }
+
+  .info-item {
+    @apply rounded-[18px] border border-border bg-white p-5;
+  }
+
+  .donation-card {
+    @apply rounded-[24px] border border-border bg-white p-8 shadow-sm;
+  }
+
+  .amount-grid {
+    @apply grid gap-4 sm:grid-cols-2 lg:grid-cols-4;
+  }
+
+  .amount-button {
+    @apply w-full rounded-[16px] border border-border bg-light px-4 py-5 text-center font-bold text-primary hover:border-accent hover:bg-accent-soft transition-colors;
+  }
+
+  .form-grid {
+    @apply grid gap-5 md:grid-cols-2;
+  }
+
+  .inline-form {
+    @apply w-full rounded-[14px] border border-border bg-white px-4 py-3 text-text focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20;
+  }
+
+  .contact-card {
+    @apply rounded-[22px] bg-primary p-8 text-white shadow-sm;
+  }
+
+  .form-input {
+    @apply w-full px-4 py-2 border border-border rounded focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-text mb-2;
+  }
+}
+
+/* Utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* RTL/LTR Adjustments */
+[dir="rtl"] .ltr-only {
+  display: none !important;
+}
+
+[dir="ltr"] .rtl-only {
+  display: none !important;
+}
+
+/* Smooth transitions */
+* {
+  @apply transition-colors duration-200;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus states */
+@layer utilities {
+  .focus-ring {
+    @apply outline-none ring-2 ring-accent ring-offset-2 rounded;
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "approach": "Approach",
+    "students": "Students",
+    "building": "Building",
+    "news": "News",
+    "contact": "Contact",
+    "donate": "Donate"
+  },
+  "common": {
+    "language": "עברית",
+    "switchLanguage": "Switch to Hebrew",
+    "back": "Back",
+    "next": "Next",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success"
+  },
+  "hero": {
+    "headline": "Orchot Chaim Yeshiva",
+    "subheadline": "Torah Learning with Deep Personal Mentorship",
+    "cta": "Become a Partner"
+  },
+  "donation": {
+    "heading": "Support Our Mission",
+    "subheading": "Your donation directly supports Torah learning and personal growth",
+    "selectAmount": "How much would you like to donate?",
+    "oneTime": "One-time",
+    "monthly": "Monthly",
+    "custom": "Custom amount",
+    "recommended": "Recommended",
+    "selectLocation": "Select country",
+    "currency": "Currency"
+  }
+}
