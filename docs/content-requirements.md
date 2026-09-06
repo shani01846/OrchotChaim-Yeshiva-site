@@ -109,13 +109,13 @@ This document inventories all required content, assets, and copy needed to launc
 | Category | Needed | Status | Notes |
 |----------|--------|--------|-------|
 | Students learning | 20+ | ❌ | Candid, real classroom |
-| Students socializing | 15+ | ❌ | Breaks, community time |
+| Students socializing | 20+ | ❌ | Breaks, community time |
 | Beit Midrash (study hall) | 10+ | ❌ | Architecture + activity |
 | Rebbe/Staff portraits | 8 | ❌ | Professional portraits |
 | Building exterior | 10+ | ❌ | Current facility |
 | Building construction | 10+ | ❌ | Progress photos |
 | Building architect render | 1 | [TBD] | If available |
-| Events & celebrations | 15+ | ❌ | Holiday programs |
+| Events & celebrations | 20+ | ❌ | Holiday programs |
 | Outdoor/grounds | 8 | ❌ | Campus, gardens |
 | Hero images (various) | 5 | ❌ | Different themes |
 

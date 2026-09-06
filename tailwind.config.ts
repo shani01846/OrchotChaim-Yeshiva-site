@@ -11,6 +11,7 @@ const config: Config = {
       colors: {
         primary: '#1F3A7D', // Deep blue
         accent: '#C9A961', // Gold
+        'accent-soft': '#F5E9D2', // Soft gold
         light: '#FAF8F3', // Warm beige
         text: '#3D4D61', // Slate gray
         border: '#E8E5DC', // Light gray

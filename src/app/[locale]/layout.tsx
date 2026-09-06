@@ -3,6 +3,11 @@ import { ReactNode } from 'react';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import '../globals.css';
+import Starfield from '@/components/Starfield';
+import dynamic from 'next/dynamic';
+
+const PageTransitionLoader = dynamic(() => import('@/components/PageTransitionLoader'), { ssr: false });
+import ChatBotButton from '@/components/ChatBotButton';
 
 type Props = {
   children: ReactNode;
@@ -47,8 +52,31 @@ export default async function RootLayout({ children, params }: Props) {
         <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="preload" as="font" />
       </head>
       <body className="bg-light text-text font-sans">
-        <NextIntlClientProvider messages={messages}>
+          <NextIntlClientProvider messages={messages}>
+          <Starfield />
+          <PageTransitionLoader />
           {children}
+          <ChatBotButton />
+          <script dangerouslySetInnerHTML={{ __html: `
+            (function(){
+              // Dynamically load ChatPanel when chat button is opened to keep initial JS small
+              const observer = new MutationObserver((mutations) => {
+                for (const m of mutations) {
+                  for (const n of m.addedNodes) {
+                    if (n instanceof Element) {
+                      const panel = n.querySelector('#chatbot-panel');
+                      if (panel) {
+                        panel.addEventListener('click', function(){
+                          // no-op
+                        });
+                      }
+                    }
+                  }
+                }
+              });
+              observer.observe(document.documentElement, { childList: true, subtree: true });
+            })();
+          ` }} />
         </NextIntlClientProvider>
       </body>
     </html>

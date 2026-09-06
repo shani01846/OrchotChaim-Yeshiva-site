@@ -1,6 +1,7 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
+import AnimatedNumber from '@/components/AnimatedNumber';
 import Link from 'next/link';
 
 interface PageProps {
@@ -33,9 +34,9 @@ export default function BuildingPage({ params }: PageProps) {
   ];
 
   const stats = [
-    { value: '3', label: isHebrew ? 'שלבי תכנון' : 'Planning stages' },
-    { value: '1', label: isHebrew ? 'מגרש מרכזי' : 'Main campus' },
-    { value: '100%', label: isHebrew ? 'חזון רחב יותר' : 'Future vision' },
+    { value: 3, suffix: '', label: isHebrew ? 'שלבי תכנון' : 'Planning stages' },
+    { value: 1, suffix: '', label: isHebrew ? 'מגרש מרכזי' : 'Main campus' },
+    { value: 100, suffix: '%', label: isHebrew ? 'חזון רחב יותר' : 'Future vision' },
   ];
 
   return (
@@ -63,7 +64,9 @@ export default function BuildingPage({ params }: PageProps) {
             <div className="stat-grid">
               {stats.map((stat) => (
                 <div key={stat.label} className="stat-card">
-                  <span className="stat-number">{stat.value}</span>
+                  <span className="stat-number">
+                    <AnimatedNumber value={stat.value} suffix={stat.suffix} duration={1.4} locale={locale} />
+                  </span>
                   <span className="mt-3 block text-primary font-medium">{stat.label}</span>
                 </div>
               ))}

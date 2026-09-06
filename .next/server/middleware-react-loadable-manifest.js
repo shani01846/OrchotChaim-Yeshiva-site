@@ -1,0 +1,1 @@
+self.__REACT_LOADABLE_MANIFEST="{\"components\\\\ChatBotButton.tsx -> ./ChatPanel\":{\"id\":\"components\\\\ChatBotButton.tsx -> ./ChatPanel\",\"files\":[\"static/chunks/_app-pages-browser_src_components_ChatPanel_tsx.js\"]}}"
