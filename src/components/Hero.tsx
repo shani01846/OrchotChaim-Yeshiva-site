@@ -1,10 +1,8 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
 import Image from 'next/image';
-import AnimatedNumber from '@/components/AnimatedNumber';
 
 interface HeroProps {
   imageSrc?: string;
@@ -14,7 +12,7 @@ interface HeroProps {
 }
 
 export default function Hero({
-  imageSrc = '/images/building.jpg',
+  imageSrc,
   headline,
   subheadline,
   eyebrow,
@@ -34,123 +32,56 @@ export default function Hero({
       <div className="hero-shell__glow hero-shell__glow--left" />
       <div className="hero-shell__glow hero-shell__glow--right" />
 
-      <div className="container relative z-10 py-16 md:py-24">
-        <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
-          <motion.div
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.75, ease: 'easeOut' }}
-            className="relative z-10 max-w-2xl text-white"
+      <div className="hero-video-banner">
+        {imageSrc ? (
+          <Image
+            className="hero-video-media"
+            src={imageSrc}
+            alt={locale === 'he' ? 'ישיבת אורחות חיים' : 'Orchot Chaim Yeshiva'}
+            fill
+            priority
+          />
+        ) : (
+          <video
+            className="hero-video-media"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster="/images/building.jpg"
+            aria-label={locale === 'he' ? 'הסרטה על ישיבת אורחות חיים' : 'A video about Orchot Chaim Yeshiva'}
           >
-            <p className="hero-badge">{displayEyebrow}</p>
-            <motion.h1
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.08, duration: 0.7 }}
-              className="mb-5 text-balance"
-            >
-              {displayHeadline}
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.15, duration: 0.7 }}
-              className="max-w-xl text-lg text-white/85 md:text-xl"
-            >
-              {displaySubheadline}
-            </motion.p>
+            <source src="/images/students-main-vidioe.MOV" />
+          </video>
+        )}
+        <div className="hero-video-shade" />
+        <div className="hero-video-copy container">
+          <div className="hero-video-content">
+            <p className="hero-kicker hero-landing-reveal hero-landing-reveal--1">
+              {displayEyebrow}
+            </p>
+            <h1 className="hero-landing-reveal hero-landing-reveal--2">
+              {locale === 'he' ? 'אורחות חיים' : 'Orchot Chaim'}
+            </h1>
+            <p className="hero-video-title hero-landing-reveal hero-landing-reveal--3">
+              {locale === 'he'
+                ? 'ממשיכים את הברכה של ר׳ חיים קנייבסקי'
+                : 'Continuing the blessing of Rabbi Chaim Kanievsky'}
+            </p>
+            <p className="hero-video-subtitle">{displaySubheadline}</p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.7 }}
-              className="mt-8 flex flex-col gap-4 sm:flex-row"
-            >
+            <div className="hero-video-actions hero-landing-reveal hero-landing-reveal--4">
               <Link href={`/${locale}/donate`} className="btn-accent">
                 {t('cta')}
               </Link>
-              <Link href={`/${locale}/about`} className="btn-secondary border-white text-white hover:bg-white/10 hover:text-white">
-                {locale === 'he' ? 'להכיר את הישיבה' : 'Meet the yeshiva'}
-              </Link>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.7 }}
-              className="hero-stat-grid mt-10"
-            >
-              <motion.div
-                whileHover={{ y: -8, scale: 1.02, rotateX: 4 }}
-                transition={{ type: 'spring', stiffness: 260, damping: 18 }}
-                className="hero-stat"
-              >
-                <strong>
-                  <AnimatedNumber value={40} suffix="+" duration={1.4} delay={0.2} locale={locale} />
-                </strong>
-                <span>{locale === 'he' ? 'תלמידים' : 'Students'}</span>
-              </motion.div>
-              <motion.div
-                whileHover={{ y: -8, scale: 1.02, rotateX: 4 }}
-                transition={{ type: 'spring', stiffness: 260, damping: 18 }}
-                className="hero-stat"
-              >
-                <strong>
-                  <AnimatedNumber value={15} suffix="+" duration={1.5} delay={0.35} locale={locale} />
-                </strong>
-                <span>{locale === 'he' ? 'שנים' : 'Years'}</span>
-              </motion.div>
-              <motion.div
-                whileHover={{ y: -8, scale: 1.02, rotateX: 4 }}
-                transition={{ type: 'spring', stiffness: 260, damping: 18 }}
-                className="hero-stat"
-              >
-                <strong>
-                  <AnimatedNumber value={100} suffix="%" duration={1.7} delay={0.5} locale={locale} />
-                </strong>
-                <span>{locale === 'he' ? 'תמיכה אישית' : 'Personal care'}</span>
-              </motion.div>
-            </motion.div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96, x: 20 }}
-            animate={{ opacity: 1, scale: 1, x: 0 }}
-            transition={{ delay: 0.15, duration: 0.8, ease: 'easeOut' }}
-            className="relative mx-auto w-full max-w-[560px]"
-          >
-            <div className="hero-visual">
-              <motion.div whileHover={{ scale: 1.02, rotate: 0.2 }} className="video-shell">
-                <Image
-                  src={imageSrc}
-                  alt={locale === 'he' ? 'ישיבת ארחות חיים' : 'Orchot Chaim Yeshiva'}
-                  fill
-                  priority
-                  className="video-frame object-cover"
-                />
-                <div className="video-overlay" />
-                <div className="video-badge">
-                  {locale === 'he' ? 'למידה • קהילה • תורה' : 'Learning • Community • Torah'}
-                </div>
-              </motion.div>
-
-              <motion.div
-                whileHover={{ y: -8, scale: 1.03 }}
-                className="floating-card floating-card--top"
-              >
-                <span className="floating-card__label">{locale === 'he' ? 'לימוד חודשי' : 'Monthly study'}</span>
-                <strong>{locale === 'he' ? 'מסלול אישי' : 'Personal path'}</strong>
-              </motion.div>
-
-              <motion.div
-                whileHover={{ y: -8, scale: 1.03 }}
-                className="floating-card floating-card--bottom"
-              >
-                <span className="floating-card__label">{locale === 'he' ? 'קהילה' : 'Community'}</span>
-                <strong>{locale === 'he' ? 'חיים של תורה' : 'Life of Torah'}</strong>
-              </motion.div>
             </div>
-          </motion.div>
+          </div>
+
+          <a href="#homepage-content" className="hero-scroll-cue" aria-label={locale === 'he' ? 'גלו עוד' : 'Discover more'}>
+            <span className="hero-scroll-cue__arrow">↓</span>
+            <span>{locale === 'he' ? 'גלו עוד' : 'Discover more'}</span>
+          </a>
         </div>
       </div>
     </section>

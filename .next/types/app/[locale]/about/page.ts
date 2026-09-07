@@ -1,4 +1,4 @@
-// File: C:\Users\User\Documents\Jobs\אתר ישיבה\src\app\[locale]\about\page.tsx
+// File: C:\Users\ישיבה - ר חיים\Videos\yeshiva_site\OrchotChaim-Yeshiva-site\src\app\[locale]\about\page.tsx
 import * as entry from '../../../../../src/app/[locale]/about/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

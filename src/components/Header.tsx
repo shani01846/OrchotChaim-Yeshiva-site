@@ -6,12 +6,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useLocale } from 'next-intl';
 
-export default function Header() {
+type HeaderProps = {
+  overlay?: boolean;
+};
+
+export default function Header({ overlay = false }: HeaderProps) {
   const t = useTranslations('navigation');
   const locale = useLocale();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const isRTL = locale === 'he';
-
   const otherLocale = locale === 'he' ? 'en' : 'he';
 
   const navItems = [
@@ -24,9 +26,9 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0b1d2f]/80 backdrop-blur-xl">
-      <div className="container flex h-20 items-center justify-between">
-        <Link href={`/${locale}`} className="flex-shrink-0">
+    <header className={`site-header sticky top-0 z-50 border-b border-white/10 bg-[#0b1d2f]/80 backdrop-blur-xl${overlay ? ' site-header--overlay' : ''}`}>
+      <div className="container header-layout flex h-20 items-center justify-between">
+        <Link href={`/${locale}`} className="header-logo-link flex-shrink-0">
           <div className="header-logo">
             <div className="header-logo__mark">
               <Image
@@ -34,14 +36,13 @@ export default function Header() {
                 alt="לוגו ישיבת ארחות חיים"
                 width={58}
                 height={58}
-                className="rounded-full object-cover"
+                className="object-contain"
               />
             </div>
-            <span>ארחות חיים</span>
           </div>
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="header-nav hidden items-center gap-8 md:flex">
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -53,7 +54,7 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="header-actions flex items-center gap-3">
           <Link href={`/${locale}/donate`} className="btn-primary hidden md:inline-block">
             {t('donate')}
           </Link>

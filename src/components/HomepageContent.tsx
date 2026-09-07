@@ -1,19 +1,16 @@
 'use client';
 
-import { useEffect, useLayoutEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
 import AnimatedNumber from '@/components/AnimatedNumber';
-
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
-}
+import GedoleiYisraelGallery from '@/components/GedoleiYisraelGallery';
+import HomepageScrollExperience from '@/components/HomepageScrollExperience';
+import YeshivaNewsTicker from '@/components/YeshivaNewsTicker';
 
 interface HomepageContentProps {
   locale: string;
@@ -34,84 +31,6 @@ export default function HomepageContent({
   storyCards,
   testimonialCards,
 }: HomepageContentProps) {
-  const recommendationRef = useRef<HTMLElement | null>(null);
-  const windmillRef = useRef<SVGSVGElement | null>(null);
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-
-    const globalWindow = window as Window & {
-      ScrollSmoother?: any;
-      __siteScrollSmoother?: any;
-    };
-
-    const initSmoother = () => {
-      const ScrollSmoother = globalWindow.ScrollSmoother;
-      if (!ScrollSmoother) return;
-
-      if (globalWindow.__siteScrollSmoother) return;
-
-      const wrapper = document.getElementById('smooth-wrapper');
-      const content = document.getElementById('smooth-content');
-
-      if (!wrapper || !content) return;
-
-      gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-      globalWindow.__siteScrollSmoother = ScrollSmoother.create({
-        wrapper,
-        content,
-        smooth: 1,
-        effects: true,
-        smoothTouch: 0.1,
-      });
-    };
-
-    if (globalWindow.ScrollSmoother) {
-      initSmoother();
-      return;
-    }
-
-    const script = document.createElement('script');
-    script.src = 'https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollSmoother.min.js';
-    script.async = true;
-    script.onload = initSmoother;
-    document.body.appendChild(script);
-
-    return () => {
-      script.remove();
-      if (globalWindow.__siteScrollSmoother) {
-        globalWindow.__siteScrollSmoother.kill();
-        delete globalWindow.__siteScrollSmoother;
-      }
-    };
-  }, []);
-
-  useLayoutEffect(() => {
-    const section = recommendationRef.current;
-    const windmill = windmillRef.current;
-
-    if (!section || !windmill) return;
-
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          scrub: 1,
-          pin: true,
-          trigger: section,
-          start: 'top 50%',
-          end: 'bottom 50%',
-        },
-      });
-
-      tl.to(windmill, {
-        rotation: 900,
-        ease: 'none',
-      });
-    }, section);
-
-    return () => ctx.revert();
-  }, []);
-
   const fadeUp = {
     hidden: { opacity: 0, y: 22 },
     show: { opacity: 1, y: 0 },
@@ -125,11 +44,8 @@ export default function HomepageContent({
         <div id="stars3"></div>
       </div>
 
-      <div id="smooth-wrapper">
-        <div id="smooth-content">
-          <Header />
-          <Hero
-            imageSrc="/images/building.jpg"
+      <Header overlay />
+      <Hero
             headline={isHebrew ? 'בונים את הבית שבו יגדל הדור הבא' : 'Building the home where the next generation grows'}
             subheadline={
               isHebrew
@@ -137,8 +53,10 @@ export default function HomepageContent({
                 : 'A yeshiva that combines Torah learning, commitment, and deep personal guidance.'
             }
           />
+          <YeshivaNewsTicker isHebrew={isHebrew} locale={locale} />
+          <HomepageScrollExperience isHebrew={isHebrew} />
 
-          <main>
+          <main id="homepage-content" className="homepage-sequence">
             <section className="section-spacing bg-white">
           <div className="container">
             <motion.div
@@ -237,7 +155,7 @@ export default function HomepageContent({
 
         <section className="section-spacing bg-white">
           <div className="container">
-            <div className="text-center mx-auto mb-12 max-w-3xl">
+              <div className="text-center mx-auto mb-12 max-w-3xl">
               <p className="section-tag">{isHebrew ? 'מה עומד במרכז' : 'What drives us'}</p>
               <h2 className="mb-4">
                 {isHebrew ? 'במקום הזה, כל פרט נבנה לכיוון המקום הנכון' : 'Here, every detail is built toward the right direction'}
@@ -310,7 +228,7 @@ export default function HomepageContent({
 
         <section className="section-spacing bg-light">
           <div className="container">
-            <div className="text-center mx-auto mb-12 max-w-3xl">
+              <div className="text-center mx-auto mb-12 max-w-3xl">
               <p className="section-tag">{isHebrew ? 'מה יש לנו להציע' : 'Our commitment'}</p>
               <h2 className="mb-4">{isHebrew ? 'שלושה עמודי יסוד' : 'Three pillars of growth'}</h2>
             </div>
@@ -335,6 +253,12 @@ export default function HomepageContent({
                 </motion.div>
               ))}
             </motion.div>
+          </div>
+        </section>
+
+        <section className="section-spacing gedolei-gallery-section">
+          <div className="container">
+            <GedoleiYisraelGallery isHebrew={isHebrew} />
           </div>
         </section>
 
@@ -383,7 +307,7 @@ export default function HomepageContent({
         </section>
 
         {testimonialCards.length > 0 && (
-          <section ref={recommendationRef} id="pin-windmill-wrap" className="section-spacing bg-light testimonial-scroll-section">
+          <section id="pin-windmill-wrap" className="section-spacing bg-light testimonial-scroll-section">
             <div className="container testimonial-layout">
               <div className="testimonial-copy-col">
                 <div className="text-center mx-auto mb-12 max-w-3xl md:text-right">
@@ -420,7 +344,6 @@ export default function HomepageContent({
               <div id="pin-windmill" className="testimonial-visual-col">
                 <div className="testimonial-visual-wrap">
                   <svg
-                    ref={windmillRef}
                     id="pin-windmill-svg"
                     viewBox="0 0 260 260"
                     className="testimonial-windmill"
@@ -467,11 +390,8 @@ export default function HomepageContent({
             </motion.div>
           </div>
         </section>
-          </main>
-
-          <Footer />
-        </div>
-      </div>
+      </main>
+      <Footer />
     </>
   );
 }

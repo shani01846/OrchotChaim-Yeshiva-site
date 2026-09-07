@@ -21,7 +21,7 @@ export default function ContactPage({ params }: PageProps) {
             ? 'לכל שאלה, הצעה, או עניין של שותפות — אנחנו כאן. נענה בהקדם.'
             : 'For questions, partnership ideas, or support, we are here and happy to connect.'
         }
-        imageSrc="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1400&h=800&fit=crop"
+        imageSrc="/images/building_plan.png"
       />
 
       <main>

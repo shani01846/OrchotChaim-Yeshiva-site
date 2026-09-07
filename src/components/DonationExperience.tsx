@@ -288,9 +288,9 @@ export default function DonationExperience({ locale }: DonationExperienceProps) 
                   <strong>{impactSummary.learningHours}</strong>
                 </div>
               </div>
-                <div className="mt-6">
-                  <DonationsChart />
-                </div>
+              <div className="mt-6">
+                <DonationsChart locale={locale} />
+              </div>
 
                 <button type="button" className="btn-primary donation-submit">
                   {isHebrew ? 'המשך לתשלום' : 'Continue to payment'}

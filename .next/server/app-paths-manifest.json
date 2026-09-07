@@ -1,1 +1,9 @@
-{}
+{
+  "/[locale]/page": "app/[locale]/page.js",
+  "/[locale]/news/page": "app/[locale]/news/page.js",
+  "/[locale]/about/page": "app/[locale]/about/page.js",
+  "/[locale]/building/page": "app/[locale]/building/page.js",
+  "/[locale]/contact/page": "app/[locale]/contact/page.js",
+  "/[locale]/students/page": "app/[locale]/students/page.js",
+  "/[locale]/donate/page": "app/[locale]/donate/page.js"
+}

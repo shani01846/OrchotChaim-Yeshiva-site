@@ -123,10 +123,10 @@ export default async function Homepage({ params }: HomepageProps) {
       _id: 'testimonial-3',
       quote_he: 'הישיבה נותנת לכל תלמיד מקום, כיוון, ומחויבות אמיתית לעתיד.',
       quote_en: 'The yeshiva gives every student a place, direction, and real commitment to the future.',
-      author_name_he: 'מורן ל.',
-      author_name_en: 'Moran L.',
-      author_role_he: 'תומכת',
-      author_role_en: 'Supporter',
+      author_name_he: 'יהושע ג.',
+      author_name_en: 'Joshua G.',
+      author_role_he: 'מדריך',
+      author_role_en: 'Counselor',
     },
   ];
 

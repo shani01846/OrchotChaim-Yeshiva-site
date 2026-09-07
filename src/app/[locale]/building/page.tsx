@@ -50,7 +50,7 @@ export default function BuildingPage({ params }: PageProps) {
             ? 'הבית החדש של הישיבה נועד לאפשר למידה, קהילה, ומסגרת יציבה לגדילה של הדור הבא.'
             : 'The new home of the yeshiva is designed to create a stable, meaningful environment for study, community, and the next generation.'
         }
-        imageSrc="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1400&h=800&fit=crop"
+        imageSrc="/images/building_plan.png"
       />
 
       <main>
@@ -93,7 +93,7 @@ export default function BuildingPage({ params }: PageProps) {
 
             <div className="image-panel">
               <img
-                src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=900&h=700&fit=crop"
+                src="/images/building-continue.jpeg"
                 alt={isHebrew ? 'הבית החדש' : 'The new building'}
                 className="h-full w-full object-cover"
               />
