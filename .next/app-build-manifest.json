@@ -11,35 +11,35 @@
       "static/css/app/[locale]/layout.css",
       "static/chunks/app/[locale]/layout.js"
     ],
-    "/[locale]/news/page": [
+    "/[locale]/rabbanim/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/news/page.js"
-    ],
-    "/[locale]/building/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/building/page.js"
+      "static/chunks/app/[locale]/rabbanim/page.js"
     ],
     "/[locale]/about/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/[locale]/about/page.js"
     ],
+    "/[locale]/donate/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[locale]/donate/page.js"
+    ],
+    "/[locale]/news/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[locale]/news/page.js"
+    ],
     "/[locale]/students/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/[locale]/students/page.js"
     ],
-    "/[locale]/contact/page": [
+    "/[locale]/building/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/contact/page.js"
-    ],
-    "/[locale]/donate/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/donate/page.js"
+      "static/chunks/app/[locale]/building/page.js"
     ]
   }
 }

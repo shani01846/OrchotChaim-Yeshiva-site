@@ -12,6 +12,7 @@ export default function Footer() {
     { href: '', label: t('home') },
     { href: '/about', label: t('about') },
     { href: '/students', label: t('students') },
+    { href: '/rabbanim', label: locale === 'he' ? 'רבני הישיבה' : 'Rabbanim' },
     { href: '/contact', label: t('contact') },
   ];
 

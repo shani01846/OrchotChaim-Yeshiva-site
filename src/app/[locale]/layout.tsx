@@ -49,7 +49,7 @@ export default async function RootLayout({ children, params }: Props) {
     <html lang={params.locale} dir={isRTL ? 'rtl' : 'ltr'}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="preload" as="font" />
+        <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;300;400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
       </head>
       <body className="bg-light text-text font-sans">
           <NextIntlClientProvider messages={messages}>

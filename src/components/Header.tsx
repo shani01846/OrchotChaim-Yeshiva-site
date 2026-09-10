@@ -20,6 +20,7 @@ export default function Header({ overlay = false }: HeaderProps) {
     { href: '', label: t('home') },
     { href: '/about', label: t('about') },
     { href: '/students', label: t('students') },
+    { href: '/rabbanim', label: locale === 'he' ? 'רבני הישיבה' : 'Rabbanim' },
     { href: '/building', label: t('building') },
     { href: '/news', label: t('news') },
     { href: '/contact', label: t('contact') },
