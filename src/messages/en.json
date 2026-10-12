@@ -25,6 +25,63 @@
     "subheadline": "Torah Learning with Deep Personal Mentorship",
     "cta": "Become a Partner"
   },
+  "donatePage": {
+    "schoolName": "Orchot Chaim Yeshiva",
+    "heroTitle": "Build a home for Torah",
+    "heroDescription": "Your gift gives students a place to learn, grow, and build a lasting connection.",
+    "heroCta": "Choose a giving option",
+    "impactEyebrow": "YOUR IMPACT",
+    "impactTitle": "Every gift becomes learning, a home, and direction.",
+    "impactDescription": "Choose how you would like to take part. Your generosity helps create meaningful change in the yeshiva.",
+    "benefits": {
+      "students": "Direct support for students",
+      "beitMidrash": "A thriving beit midrash",
+      "securePayment": "Secure payment"
+    },
+    "formEyebrow": "CHOOSE HOW TO GIVE",
+    "formTitle": "Turn generosity into impact",
+    "tracksAria": "Donation options",
+    "tracks": {
+      "student": {
+        "label": "Support a student",
+        "detail": "Give a student the space, resources, and guidance to grow"
+      },
+      "yeshiva": {
+        "label": "Support the yeshiva",
+        "detail": "Partner in the beit midrash and the future of Torah learning"
+      },
+      "memorial": {
+        "label": "In memory of a loved one",
+        "detail": "Honor someone dear through the merit of Torah study"
+      }
+    },
+    "monthly": "per month",
+    "oneTime": "One-time gift",
+    "amount": "Donation amount",
+    "amountPlaceholder": "Or enter another amount (default: ₪{amount})",
+    "fullName": "Full name",
+    "phone": "Phone",
+    "email": "Email",
+    "memorialName": "Name to honor",
+    "fullNamePlaceholder": "Your full name",
+    "phonePlaceholder": "+1 555 123 4567",
+    "emailPlaceholder": "you@example.com",
+    "memorialPlaceholder": "Name of your loved one",
+    "submit": "Continue to secure payment",
+    "paymentNote": "Your details are sent directly to Nedarim Plus's secure payment environment.",
+    "validation": {
+      "amount": "Enter a valid donation amount.",
+      "fullName": "Enter your full name.",
+      "phone": "Enter a valid phone number, including country code.",
+      "email": "Enter a valid email address.",
+      "memorialName": "Enter the name you would like to honor."
+    },
+    "checkoutTitle": "Secure payment",
+    "iframeTitle": "Nedarim Plus payment form",
+    "thankYouTitle": "Thank you",
+    "thankYouDescription": "Your donation was received successfully. May the merit of Torah bring blessing to you and your family.",
+    "close": "Close"
+  },
   "donation": {
     "heading": "Support Our Mission",
     "subheading": "Your donation directly supports Torah learning and personal growth",

@@ -16,10 +16,10 @@
       "static/chunks/main-app.js",
       "static/chunks/app/[locale]/rabbanim/page.js"
     ],
-    "/[locale]/about/page": [
+    "/[locale]/building/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/about/page.js"
+      "static/chunks/app/[locale]/building/page.js"
     ],
     "/[locale]/donate/page": [
       "static/chunks/webpack.js",
@@ -30,16 +30,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/[locale]/news/page.js"
-    ],
-    "/[locale]/students/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/students/page.js"
-    ],
-    "/[locale]/building/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/building/page.js"
     ]
   }
 }

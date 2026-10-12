@@ -3365,6 +3365,12 @@ video {
 .top-0 {
   top: 0px;
 }
+.-start-20 {
+  inset-inline-start: -5rem;
+}
+.start-4 {
+  inset-inline-start: 1rem;
+}
 .isolate {
   isolation: isolate;
 }
@@ -3468,14 +3474,11 @@ video {
 .h-full {
   height: 100%;
 }
-.min-h-28 {
-  min-height: 7rem;
+.min-h-32 {
+  min-height: 8rem;
 }
 .min-h-screen {
   min-height: 100vh;
-}
-.min-h-32 {
-  min-height: 8rem;
 }
 .w-16 {
   width: 4rem;
@@ -3751,11 +3754,20 @@ video {
 .pt-8 {
   padding-top: 2rem;
 }
+.pe-4 {
+  padding-inline-end: 1rem;
+}
+.ps-9 {
+  padding-inline-start: 2.25rem;
+}
 .text-center {
   text-align: center;
 }
 .text-right {
   text-align: right;
+}
+.text-start {
+  text-align: start;
 }
 .font-sans {
   font-family: 'Heebo', system-ui, -apple-system, sans-serif;

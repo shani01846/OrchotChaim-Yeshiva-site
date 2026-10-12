@@ -1,7 +1,7 @@
 {
-  "/[locale]/donate/page": "app/[locale]/donate/page.js",
   "/[locale]/page": "app/[locale]/page.js",
-  "/[locale]/students/page": "app/[locale]/students/page.js",
-  "/[locale]/news/page": "app/[locale]/news/page.js",
-  "/[locale]/building/page": "app/[locale]/building/page.js"
+  "/[locale]/building/page": "app/[locale]/building/page.js",
+  "/[locale]/rabbanim/page": "app/[locale]/rabbanim/page.js",
+  "/[locale]/donate/page": "app/[locale]/donate/page.js",
+  "/[locale]/news/page": "app/[locale]/news/page.js"
 }
