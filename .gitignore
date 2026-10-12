@@ -1,5 +1,8 @@
 # Dependencies
 node_modules/
+.next/
+out/
+dist/
 
 # Environment variables & logs
 .env
